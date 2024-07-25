@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+:root {
+  ---purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--light-grey);
+}
+/* start style for wrapper  */
+.wrapper {
+  padding: 20px;
+  min-width: 500px;
+  background-color: var(--white);
+  border-radius: 10px;
+  border-bottom-right-radius: 50px !important;
+  box-shadow: 0px 7px 29px 0px var(--smokey-grey);
+}
+/* end style for warpper  */
+
+/* start style for form  */
+form {
+  margin-top: 20px;
+  position: relative;
+}
+form div {
+  display: inline-block;
+  position: relative;
+  margin-right: 0.5em;
+}
+form div label {
+  position: absolute;
+  top: -15px;
+  left: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  font-size: 0.5em;
+  color: var(--smokey-grey);
+}
+form input {
+  width: 100px;
+  padding: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 1px solid var(--smokey-grey);
+  border-radius: 0.4em;
+}
+.error-message {
+  font-size: 0.5em;
+  font-weight: 400;
+  font-style: italic;
+  color: red;
+  display: none;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+}
+form input:focus {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border: 1px solid var(---purple);
+}
+.input-box-group {
+  margin-bottom: 20px;
+}
+/* end style for form  */
+/* start style for line below form  */
+form::after {
+  margin: 15px 0;
+  content: "";
+  display: block;
+  width: 90%;
+  height: 1px;
+  background-color: var(--light-grey);
+}
+.button-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: var(---purple);
+  padding: 14px;
+  position: absolute;
+  bottom: -25px;
+  right: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+.button-box img {
+  width: 100%;
+}
+.button-box:hover {
+  background-color: var(--off-black);
+  cursor: pointer;
+}
+/* end style for line below form  */
+/* start style for showcase  */
+.showcase {
+  margin-top: 10px;
+  font-size: 3em;
+  font-weight: 900;
+  line-height: 1em;
+  font-style: italic;
+}
+.year-range,
+.month-range,
+.day-range {
+  color: var(---purple);
+  font-weight: 800;
+}
+/* end style for showcase  */
+/* style for responsive  */
+@media screen and (max-width: 450px) {
+  body {
+    padding: 10px;
+  }
+  .wrapper {
+    min-width: auto;
+    max-width: 400px;
+  }
+  form input {
+    width: 80px;
+  }
+  .button-box {
+    position: absolute;
+    bottom: -25px;
+    right: 120px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .input-box-group {
+    margin-bottom: 40px;
+  }
+  .showcase {
+    margin-top: 40px;
+  }
+}
