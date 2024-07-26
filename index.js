@@ -57,6 +57,11 @@ const calculateAge = (days, months, years) => {
   return true;
 };
 
+const clearInputField = () => {
+  selectElement("#mm").value = "";
+  selectElement("#dd").value = "";
+  selectElement("#yy").value = "";
+};
 const checkDateValid = (days, months) => {
   let month = parseInt(months.value);
   let day = parseInt(days.value);
@@ -134,6 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (inputBlankCheck(dayBox, monthBox, yearBox)) {
       if (checkDateValid(dayBox, monthBox)) {
         calculateAge(dayBox.value, monthBox.value, yearBox.value);
+        clearInputField();
         return;
       }
       console.log("Validation Fail");
